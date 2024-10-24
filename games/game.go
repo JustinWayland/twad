@@ -173,8 +173,13 @@ func (g *Game) run(rcfg runOptionSet) (err error) {
 }
 
 func (g *Game) composeProcess(params []string) (cmd *exec.Cmd) {
-	// create process object
-	cmd = exec.Command(g.Port, params...)
+	if !base.Config().StreamerMode {
+		// create process object
+		cmd = exec.Command(g.Port, params...)
+	} else {
+		var new_params = append([]string{g.Port}, params...)
+		cmd = exec.Command("obs-gamecapture", new_params...)
+	}
 	// add environment variables; use os environment as basis
 	cmd.Env = os.Environ()
 	cmd.Env = append(cmd.Env, g.Environment...)

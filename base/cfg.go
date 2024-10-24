@@ -45,7 +45,7 @@ var (
 )
 
 const (
-	CFG_VERSION      = 2
+	CFG_VERSION      = 3
 	configName       = "twad.json"
 	configPath       = ".config/twad"
 	MAX_SOURCE_PORTS = 6
@@ -66,6 +66,7 @@ type Cfg struct {
 	GameListAbsoluteWidth  int      `json:"game_list_absolute_width"`
 	GameListRelativeWidth  int      `json:"game_list_relative_width"`
 	UseTerminalColors      bool     `json:"use_terminal_colors"`
+	StreamerMode           bool     `json:"streamer_mode"`
 	CfgVersion             int      `json:"cfg_version"`
 }
 
@@ -84,6 +85,7 @@ func defaultConfig() Cfg {
 		IWADs:                 []string{"doom2.wad", "doom.wad", "plutonia.wad", "tnt.wad", "heretic.wad", "boa.ipk3"},
 		GameListRelativeWidth: 40,
 		GameListAbsoluteWidth: 0,
+		StreamerMode:          false,
 		CfgVersion:            CFG_VERSION,
 	}
 
