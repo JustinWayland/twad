@@ -19,6 +19,8 @@ func RunRofiMode(command string) {
 		params = []string{"-dmenu", "-p", "'Rip & Tear'"}
 	} else if command == "dmenu" && commandExists("dmenu") {
 		params = []string{"-p", "'Rip & Tear'"}
+	} else if command == "tofi" && commandExists("tofi") {
+		params = []string{"--prompt-text", "'Rip & Tear'"}
 	} else {
 		return
 	}

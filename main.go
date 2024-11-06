@@ -11,6 +11,7 @@ import (
 func main() {
 	rofi := flag.Bool("rofi", false, "Run rofi mode.")
 	dmenu := flag.Bool("dmenu", false, "Run dmenu mode.")
+	tofi := flag.Bool("tofi", false, "Run tofi mode.")
 	flag.Parse()
 
 	base.Config()
@@ -23,6 +24,10 @@ func main() {
 	if *dmenu {
 		rofimode.RunRofiMode("dmenu")
 		return
+	}
+
+	if *tofi {
+		rofimode.RunRofiMode("tofi")
 	}
 
 	//cfg.GetInstance().Configured = false
