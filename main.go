@@ -28,6 +28,7 @@ func main() {
 
 	if *tofi {
 		rofimode.RunRofiMode("tofi")
+		return
 	}
 
 	//cfg.GetInstance().Configured = false
