@@ -16,7 +16,7 @@ func RunRofiMode(command string) {
 	base.EnableBasePath()
 	var params []string
 	if command == "rofi" && commandExists("rofi") {
-		params = []string{"rofi", "-dmenu", "-p", "'Rip & Tear'"}
+		params = []string{"-dmenu", "-p", "'Rip & Tear'"}
 	} else if command == "dmenu" && commandExists("dmenu") {
 		params = []string{"-p", "'Rip & Tear'"}
 	} else {

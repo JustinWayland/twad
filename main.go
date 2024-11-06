@@ -21,7 +21,7 @@ func main() {
 	}
 
 	if *dmenu {
-		rofimode.RunRofiMode("rofi")
+		rofimode.RunRofiMode("dmenu")
 		return
 	}
 
