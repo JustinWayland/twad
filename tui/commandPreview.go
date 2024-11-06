@@ -36,6 +36,8 @@ func stylizeCommandList(params []string) string {
 		"-statdump":      true,
 		"-levelstat":     true,
 		"-fast":          true,
+		"-complvl":       true,
+		"-cl":            true,
 		"zdoom":          true,
 		"gzdoom":         true,
 		"lzdoom":         true,
@@ -46,6 +48,7 @@ func stylizeCommandList(params []string) string {
 		"prboom-plus":    true,
 		"woof":           true,
 		"dsda":           true,
+		"dsda-doom":      true,
 	}
 
 	optionals := map[string]int{
