@@ -23,11 +23,12 @@ func runZipImport(archivePath string, folderNameSuggest string, xOffset int, yOf
 		}
 	}
 
-	modNameInput := tview.NewInputField().SetLabel(dict.zipImportToLabel).SetText(path.Base(archivePath))
+	modNameInput := tview.NewInputField().SetLabel(dict.zipImportToLabel)
 
-	modNameInput.SetText(strings.TrimSuffix(path.Base(archivePath), path.Ext(archivePath)))
 	if folderNameSuggest != "" {
 		modNameInput.SetText(folderNameSuggest)
+	} else {
+		modNameInput.SetText(strings.TrimSuffix(path.Base(archivePath), path.Ext(archivePath)))
 	}
 
 	modNameDoneCheck := func() {
