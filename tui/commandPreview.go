@@ -38,6 +38,7 @@ func stylizeCommandList(params []string) string {
 		"-fast":          true,
 		"-complvl":       true,
 		"-cl":            true,
+		"-pistolstart":   true,
 		"zdoom":          true,
 		"gzdoom":         true,
 		"lzdoom":         true,
