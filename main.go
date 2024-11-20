@@ -10,6 +10,7 @@ import (
 
 func main() {
 	rofi := flag.Bool("rofi", false, "Run rofi mode.")
+	wofi := flag.Bool("wofi", false, "Run wofi mode.")
 	dmenu := flag.Bool("dmenu", false, "Run dmenu mode.")
 	tofi := flag.Bool("tofi", false, "Run tofi mode.")
 	flag.Parse()
@@ -18,6 +19,11 @@ func main() {
 
 	if *rofi {
 		rofimode.RunRofiMode("rofi")
+		return
+	}
+
+	if *wofi {
+		rofimode.RunRofiMode("wofi")
 		return
 	}
 
