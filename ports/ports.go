@@ -115,6 +115,8 @@ func SaveGameName(port, save string) string {
 				save = strings.TrimSuffix(strings.TrimPrefix(save, "doomsav"), ".dsg")
 			} else if strings.HasPrefix(save, "woofsav") {
 				save = strings.TrimSuffix(strings.TrimPrefix(save, "woofsav"), ".dsg")
+			} else if strings.Contains(port, "woof") && strings.HasPrefix(save, "autosave") {
+				save = "255"
 			}
 
 			return save
