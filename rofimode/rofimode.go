@@ -10,7 +10,7 @@ import (
 	"github.com/zmnpl/twad/games"
 )
 
-// RunRofiMode starts rofi (or demenu) to select and run a already created game.
+// RunRofiMode starts rofi (or any other dmenu-like program) to select and run a already created game.
 // It pipes all games as a list of names to the external program
 func RunRofiMode(command string) {
 	base.EnableBasePath()
@@ -23,8 +23,10 @@ func RunRofiMode(command string) {
 	} else if command == "dmenu" && commandExists("dmenu") {
 		params = []string{"-p", prompt}
 	} else if command == "tofi" && commandExists("tofi") {
+		// TODO: Add placeholder text so that Rip & Tear can live on
 		params = []string{"--prompt-text", prompt}
 	} else if command == "fuzzel" && commandExists("fuzzel") {
+		// TODO: Add placeholder text so that Rip & Tear can live on
 		params = []string{"-d", "-p", prompt}
 	} else {
 		return
