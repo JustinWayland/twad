@@ -23,11 +23,9 @@ func RunRofiMode(command string) {
 	} else if command == "dmenu" && commandExists("dmenu") {
 		params = []string{"-p", prompt}
 	} else if command == "tofi" && commandExists("tofi") {
-		// TODO: Add placeholder text so that Rip & Tear can live on
-		params = []string{"--prompt-text", prompt}
+		params = []string{"--prompt-text", prompt, "--placeholder-text=Rip & Tear"}
 	} else if command == "fuzzel" && commandExists("fuzzel") {
-		// TODO: Add placeholder text so that Rip & Tear can live on
-		params = []string{"-d", "-p", prompt}
+		params = []string{"-d", "-p", prompt, "--placeholder=Rip & Tear"}
 	} else {
 		return
 	}
