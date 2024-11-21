@@ -15,14 +15,15 @@ import (
 func RunRofiMode(command string) {
 	base.EnableBasePath()
 	var params []string
+	prompt := "Rip & Tear: "
 	if command == "rofi" && commandExists("rofi") {
-		params = []string{"--dmenu", "-p", "Rip & Tear: "}
+		params = []string{"--dmenu", "-p", prompt}
 	} else if command == "wofi" && commandExists("wofi") {
-		params = []string{"--dmenu", "-p", "Rip & Tear: "}
+		params = []string{"--dmenu", "-p", prompt}
 	} else if command == "dmenu" && commandExists("dmenu") {
-		params = []string{"-p", "Rip & Tear: "}
+		params = []string{"-p", prompt}
 	} else if command == "tofi" && commandExists("tofi") {
-		params = []string{"--prompt-text", "Rip & Tear: "}
+		params = []string{"--prompt-text", prompt}
 	} else {
 		return
 	}
