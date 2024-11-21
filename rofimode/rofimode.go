@@ -15,7 +15,7 @@ import (
 func RunRofiMode(command string) {
 	base.EnableBasePath()
 	var params []string
-	prompt := "Rip & Tear: "
+	prompt := "Launch: "
 	if command == "rofi" && commandExists("rofi") {
 		params = []string{"--dmenu", "-p", prompt}
 	} else if command == "wofi" && commandExists("wofi") {
