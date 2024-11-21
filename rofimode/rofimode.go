@@ -24,6 +24,8 @@ func RunRofiMode(command string) {
 		params = []string{"-p", prompt}
 	} else if command == "tofi" && commandExists("tofi") {
 		params = []string{"--prompt-text", prompt}
+	} else if command == "fuzzel" && commandExists("fuzzel") {
+		params = []string{"-d", "-p", prompt}
 	} else {
 		return
 	}

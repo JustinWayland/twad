@@ -13,6 +13,7 @@ func main() {
 	wofi := flag.Bool("wofi", false, "Run wofi mode.")
 	dmenu := flag.Bool("dmenu", false, "Run dmenu mode.")
 	tofi := flag.Bool("tofi", false, "Run tofi mode.")
+	fuzzel := flag.Bool("fuzzel", false, "Run fuzzel mode")
 	flag.Parse()
 
 	base.Config()
@@ -34,6 +35,11 @@ func main() {
 
 	if *tofi {
 		rofimode.RunRofiMode("tofi")
+		return
+	}
+
+	if *fuzzel {
+		rofimode.RunRofiMode("fuzzel")
 		return
 	}
 
