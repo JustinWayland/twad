@@ -180,6 +180,9 @@ func makeOptions() *tview.Flex {
 		o.AddFormItem(sourcePort)
 	}
 
+	streamerMode := tview.NewCheckbox().SetLabel(dict.optsStreamerMode).SetLabelColor(tview.Styles.SecondaryTextColor).SetChecked(base.Config().StreamerMode)
+	o.AddFormItem(streamerMode)
+
 	// ui options
 	//#######################################################################
 	termColors := tview.NewCheckbox().SetLabel(dict.optsUseTerminalColors).SetLabelColor(tview.Styles.SecondaryTextColor).SetChecked(base.Config().UseTerminalColors)
@@ -224,6 +227,7 @@ func makeOptions() *tview.Flex {
 		c.DeleteWithoutWarning = dontWarn.IsChecked()
 		c.GameListRelativeWidth, _ = strconv.Atoi(gameListRelWidth.GetText())
 		c.UseTerminalColors = termColors.IsChecked()
+		c.StreamerMode = streamerMode.IsChecked()
 
 		base.Persist()
 		base.EnableBasePath()

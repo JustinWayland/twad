@@ -56,6 +56,7 @@ type dictionary struct {
 	optsDontWarn                 string
 	optsSourcePortLabel          string
 	optsIwadsLabel               string
+	optsStreamerMode             string
 	optsHideHeader               string
 	optsGamesListRelativeWitdh   string
 	optsUseTerminalColors        string
@@ -148,6 +149,7 @@ func defaultDict() dictionary {
 		optsDontWarn:                 "Do NOT warn before deletion",
 		optsSourcePortLabel:          "Source Port",
 		optsIwadsLabel:               "IWADs",
+		optsStreamerMode:             "Streamer Mode",
 		optsHideHeader:               "UI - Hide big DOOM logo",
 		optsGamesListRelativeWitdh:   "UI - Game list relative width (1-100%)",
 		optsUseTerminalColors:        "UI - Use terminal color theme",
