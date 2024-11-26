@@ -14,32 +14,33 @@ func main() {
 	dmenu := flag.Bool("dmenu", false, "Run dmenu mode.")
 	tofi := flag.Bool("tofi", false, "Run tofi mode.")
 	fuzzel := flag.Bool("fuzzel", false, "Run fuzzel mode")
+	resume := flag.Bool("resume", false, "Launch last savegame. Rofi mode only.")
 	flag.Parse()
 
 	base.Config()
 
 	if *rofi {
-		rofimode.RunRofiMode("rofi")
+		rofimode.RunRofiMode("rofi", *resume)
 		return
 	}
 
 	if *wofi {
-		rofimode.RunRofiMode("wofi")
+		rofimode.RunRofiMode("wofi", *resume)
 		return
 	}
 
 	if *dmenu {
-		rofimode.RunRofiMode("dmenu")
+		rofimode.RunRofiMode("dmenu", *resume)
 		return
 	}
 
 	if *tofi {
-		rofimode.RunRofiMode("tofi")
+		rofimode.RunRofiMode("tofi", *resume)
 		return
 	}
 
 	if *fuzzel {
-		rofimode.RunRofiMode("fuzzel")
+		rofimode.RunRofiMode("fuzzel", *resume)
 		return
 	}
 

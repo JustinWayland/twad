@@ -12,10 +12,15 @@ import (
 
 // RunRofiMode starts rofi (or any other dmenu-like program) to select and run a already created game.
 // It pipes all games as a list of names to the external program
-func RunRofiMode(command string) {
+func RunRofiMode(command string, resume bool) {
 	base.EnableBasePath()
 	var params []string
-	prompt := "Launch: "
+	var prompt string
+	if resume {
+		prompt = "Resume: "
+	} else {
+		prompt = "Launch: "
+	}
 	if command == "rofi" && commandExists("rofi") {
 		params = []string{"--dmenu", "-p", prompt}
 	} else if command == "wofi" && commandExists("wofi") {
@@ -56,7 +61,11 @@ func RunRofiMode(command string) {
 
 	// run selected game
 	if i, exists := rofiToGame[result]; exists {
-		games.Games()[i].Run()
+		if resume {
+			games.Games()[i].Quickload()
+		} else {
+			games.Games()[i].Run()
+		}
 	}
 }
 
