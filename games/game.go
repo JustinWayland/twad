@@ -183,6 +183,9 @@ func (g *Game) composeProcess(params []string) (cmd *exec.Cmd) {
 	// add environment variables; use os environment as basis
 	cmd.Env = os.Environ()
 	cmd.Env = append(cmd.Env, g.Environment...)
+	if base.Config().StreamerMode {
+		cmd.Env = append(cmd.Env, "SDL_VIDEO_WAYLAND_SCALE_TO_DISPLAY=1")
+	}
 	return
 }
 
